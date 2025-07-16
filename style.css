@@ -1,0 +1,131 @@
+/* RESET */
+* {
+  min-width: 0;
+  font: inherit;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #f5e6ff;
+  font-family: 'Quicksand', sans-serif;
+}
+
+h1, h2, h3 {
+  text-wrap: balance;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container-letter {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.cover {
+  position: absolute;
+  border-left: 200px solid transparent;
+  border-right: 200px solid transparent;
+  border-top: 100px solid #b388eb;
+  border-bottom: 100px solid transparent;
+  transition: transform 0.75s;
+  transform-origin: top;
+  z-index: 2;
+}
+
+.letter {
+  border-left: 200px solid #d3bfff;
+  border-right: 200px solid #d3bfff;
+  border-top: 100px solid transparent;
+  border-bottom: 100px solid #cda3ff;
+}
+
+.paper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 0) scaleY(0);
+  opacity: 0;
+  padding: 1.5rem;
+  line-height: 2rem;
+  background: white;
+  width: 600px;
+  height: 500px;
+  z-index: 1;
+  overflow-y: auto;
+  transition: all 0.75s ease-in-out;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transform-origin: bottom;
+}
+
+.open-paper {
+transform: translate(-50%, -50%) scaleY(1); 
+  opacity: 1;
+}
+
+.close-paper {
+  top: 100px;
+  opacity: 0;
+  transform: scaleY(0);
+}
+
+.options {
+  display: flex;
+  gap: 5rem;
+}
+
+.options button {
+  color: #7b1fa2;
+  font-weight: 600;
+  border-radius: 5px;
+  background: #f5e6ff;
+  padding: 0.5rem 1rem;
+  border: 1px solid #b388eb;
+  cursor: pointer;
+  font-family: 'Quicksand', sans-serif;
+  transition: all 0.3s ease-in-out;
+}
+
+.options button:hover {
+  background: #cda3ff;
+  color: white;
+}
+
+.open-cover {
+  transform: rotateX(180deg);
+}
+
+.heart {
+  display: none;
+  position: absolute;
+  top: 25%;
+  left: 46.5%;
+  margin: auto;
+  font-size: 3rem;
+  color: #b388eb;
+  animation: crecer 1s forwards;
+}
+
+@keyframes crecer {
+  0% {
+    scale: 1;
+    opacity: 1;
+  }
+  100% {
+    scale: 3;
+    opacity: 0;
+  }
+}
+
